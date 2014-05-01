@@ -1,0 +1,132 @@
+flight:
+1. id
+2. flight_number
+3. airlines
+4. number_of_seats
+
+drop table flight;
+
+CREATE TABLE flight (
+id MEDIUMINT  AUTO_INCREMENT,
+flight_number CHAR(7) NOT NULL,
+airlines CHAR(30),
+number_of_seats INTEGER(4),
+PRIMARY KEY (id)
+);
+
+
+select * from flight;
+
+//--------------------------------------------------------------------------------
+airport:
+1. id
+2. city
+3. state
+4. code
+
+drop table airport;
+
+CREATE TABLE airport (
+id MEDIUMINT NOT NULL AUTO_INCREMENT,
+city CHAR(30),
+state CHAR(30),
+code CHAR(6),
+PRIMARY KEY (id)
+);
+
+INSERT INTO airport (city, state, code) VALUES ('Albany', 'NY', 'ALB');
+INSERT INTO airport (city, state, code) VALUES ('Austin', 'TX', 'AUS');
+INSERT INTO airport (city, state, code) VALUES ('Baltimore', 'MD', 'BWI');
+INSERT INTO airport (city, state, code) VALUES ('Boston', 'MA', 'BOS');
+INSERT INTO airport (city, state, code) VALUES ('Bradford', 'PA', 'BFD');
+INSERT INTO airport (city, state, code) VALUES ('Buffalo', 'NY', 'BUF');
+INSERT INTO airport (city, state, code) VALUES ('Cedar City', 'UT', 'CDC');
+INSERT INTO airport (city, state, code) VALUES ('Charlotte', 'NC', 'CLT');
+INSERT INTO airport (city, state, code) VALUES ('Chicago', 'IL', 'CHI');
+INSERT INTO airport (city, state, code) VALUES ('Cincinnati', 'OH', 'CVG');
+INSERT INTO airport (city, state, code) VALUES ('Cleveland', 'OH', 'CLE');
+INSERT INTO airport (city, state, code) VALUES ('Columbus', 'GA', 'CSG');
+INSERT INTO airport (city, state, code) VALUES ('Columbus', 'OH', 'CMH');
+INSERT INTO airport (city, state, code) VALUES ('Denver', 'CO', 'DEN');
+INSERT INTO airport (city, state, code) VALUES ('Detroit', 'MI', 'DTT');
+INSERT INTO airport (city, state, code) VALUES ('Gainesville', 'FL', 'GNV');
+INSERT INTO airport (city, state, code) VALUES ('Hartford', 'CT', 'BDL');
+INSERT INTO airport (city, state, code) VALUES ('Houston', 'TX', 'HOU');
+INSERT INTO airport (city, state, code) VALUES ('Indianapolis', 'IN', 'IND');
+INSERT INTO airport (city, state, code) VALUES ('Ithaca', 'NY', 'ITH');
+INSERT INTO airport (city, state, code) VALUES ('Jacksonville', 'FL', 'JAX');
+INSERT INTO airport (city, state, code) VALUES ('Kansas City', 'MO', 'MCI');
+INSERT INTO airport (city, state, code) VALUES ('Lancaster', 'PA', 'LNS');
+INSERT INTO airport (city, state, code) VALUES ('Long Beach', 'CA', 'LGB');
+INSERT INTO airport (city, state, code) VALUES ('Los Angeles', 'CA', 'LAX');
+INSERT INTO airport (city, state, code) VALUES ('Memphis', 'TN', 'MEM');
+INSERT INTO airport (city, state, code) VALUES ('Minneapolis', 'MN', 'MSP');
+INSERT INTO airport (city, state, code) VALUES ('New York', 'NY', 'NYC');
+INSERT INTO airport (city, state, code) VALUES ('New York', 'NY', 'JFK');
+INSERT INTO airport (city, state, code) VALUES ('Oakland', 'CA', 'OAK');
+INSERT INTO airport (city, state, code) VALUES ('Phoenix', 'AZ', 'PHX');
+INSERT INTO airport (city, state, code) VALUES ('Rochester', 'NY', 'ROC');
+INSERT INTO airport (city, state, code) VALUES ('Raleigh/Durham', 'NC', 'RDU');
+INSERT INTO airport (city, state, code) VALUES ('San Diego', 'CA', 'SAN');
+INSERT INTO airport (city, state, code) VALUES ('San Francisco', 'CA', 'SFO');
+INSERT INTO airport (city, state, code) VALUES ('San Jose', 'CA', 'SJC');
+INSERT INTO airport (city, state, code) VALUES ('Tampa', 'FL', 'TPA');
+INSERT INTO airport (city, state, code) VALUES ('Toledo', 'OH', 'TOL');
+INSERT INTO airport (city, state, code) VALUES ('Washington', 'DC', 'WAS');
+
+INSERT INTO airport (city, state, code) VALUES ('', '', '');
+
+select * from airport;
+//--------------------------------------------------------------------------------
+
+schedule:
+1. id
+2. from
+3. to
+4. departure date
+5. departure time
+6. duration
+8. flight number
+9. number of seats filled / available
+10. price
+
+drop table schedule;
+
+CREATE TABLE schedule (
+id MEDIUMINT NOT NULL AUTO_INCREMENT,
+from_airport_id MEDIUMINT NOT NULL,
+to_airport_id MEDIUMINT NOT NULL,
+departure_date CHAR(10),
+departure_time CHAR(5),
+duration_mins MEDIUMINT NOT NULL,
+arrival_date CHAR(10),
+arrival_time CHAR(5),
+flight_id MEDIUMINT NOT NULL,
+number_of_seats_left INTEGER(4),
+price NUMERIC(8,2),
+PRIMARY KEY (id)
+);
+
+
+
+select * from schedule;
+
+//--------------------------------------------------------------------------------
+
+duration:
+1. id
+2. from_airport_id
+3. to_airport_id
+4. duration (number_of_minutes)
+
+drop table duration;
+
+CREATE TABLE duration (
+id MEDIUMINT NOT NULL AUTO_INCREMENT,
+from_airport_id MEDIUMINT NOT NULL,
+to_airport_id MEDIUMINT NOT NULL,
+duration_mins MEDIUMINT NOT NULL,
+PRIMARY KEY (id)
+);
+
+

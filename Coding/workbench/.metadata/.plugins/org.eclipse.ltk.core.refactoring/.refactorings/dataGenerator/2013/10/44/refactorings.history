@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;capacityIterator&apos; in &apos;dataGenerator.FlightGenerator.main(...)&apos; to &apos;capacityArrayIterator&apos;&#x0A;- Original project: &apos;dataGenerator&apos;&#x0A;- Original element: &apos;dataGenerator.FlightGenerator.main(String[]).capacityIterator&apos;&#x0A;- Renamed element: &apos;capacityIterator&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;capacityIterator&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;dataGenerator{FlightGenerator.java[FlightGenerator~main~\[QString;@capacityIterator!623!647!627!642!I!0!false" name="capacityArrayIterator" references="true" stamp="1383050123011" version="1.0"/>
+</session>
